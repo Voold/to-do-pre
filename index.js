@@ -53,7 +53,8 @@ function createItem(item) {
 
   duplicateButton.addEventListener("click", () => {
 
-    const newItem = createItem(item);
+    const currentItemText = textElement.textContent.trim(); 
+    const newItem = createItem(currentItemText);
 
     if (listElement.firstChild) {
       listElement.insertBefore(newItem, listElement.firstChild);
@@ -82,7 +83,7 @@ function createItem(item) {
 
 			textElement.contentEditable = "false";
 
-    }, { once: true }); // once: true удалит обработчик после редактирования йоу
+    }, { once: true });
   });
 
   return clone;
